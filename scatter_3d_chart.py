@@ -18,11 +18,8 @@ def str_to_num(input):
     
     return eval(input_clean)
 
-
 for attr in dtypes:
     df[attr] = df[attr].apply(str_to_num)
-
-df
 
 fig = px.scatter_3d(df, x="Carbs", y="Protein", z="Calories", color="Category",
                                width=800, height=400)
