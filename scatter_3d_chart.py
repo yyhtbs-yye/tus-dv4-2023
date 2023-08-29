@@ -22,8 +22,10 @@ for attr in dtypes:
     df[attr] = df[attr].apply(str_to_num)
 
 fig = px.scatter_3d(df, x="Carbs", y="Protein", z="Calories", color="Category",
-                               width=800, height=400)
+                               width=800, height=600)
 fig.update_traces(marker=dict(size=3))
+# fig.update_layout(legend=dict(x=1, y=1, xanchor='right', yanchor='top'))
+
 fig.show()
 
 graphJSON = pio.to_json(fig)
